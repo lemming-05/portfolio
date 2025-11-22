@@ -162,7 +162,8 @@ span {
 }
 
 .about-img img {
-    width: 35vw;
+    width: 30vw;
+    border-radius: 10%;
 }
 
 .about-content h2 {
@@ -373,4 +374,139 @@ span {
 .footer-iconTop a i {
     font-size: 2.4rem;
     color: var(--second-bg-color);
+}
+
+/* ======================== MEDIA QUERIES (RESPONSIVENESS) ======================== */
+
+/* LARGE DEVICES (Laptops/Desktops - 1200px) */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%; /* Scaling down font size slightly */
+    }
+}
+
+/* MEDIUM DEVICES (Tablets - 991px) */
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%; /* Reduce padding on header */
+    }
+
+    section {
+        padding: 10rem 4% 2rem; /* Reduce padding on sections */
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+
+    /* Portfolio Adjustments */
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    }
+
+    .home-img img {
+        width: 30vw; /* Slightly larger image on tablets */
+    }
+}
+
+/* SMALL DEVICES (Large Phones/Small Tablets - 768px) */
+@media (max-width: 768px) {
+    /* Navigation Adjustments */
+    #menu-icon {
+        display: block; /* Show the hamburger menu icon */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%; /* Below the header */
+        left: 0;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--bg-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+        display: none; /* Hide by default */
+        transition: .25s ease;
+    }
+
+    .navbar.active {
+        display: block; /* Show when 'active' class is added by JS */
+    }
+
+    .navbar a {
+        display: block; /* Make links stack vertically */
+        font-size: 2rem;
+        margin: 1.5rem 0;
+    }
+
+    /* Home/Hero Section Adjustments */
+    .home {
+        flex-direction: column-reverse; /* Put image above text on mobile */
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-img {
+        margin-bottom: 3rem;
+    }
+
+    .home-img img {
+        width: 70vw; /* Make image larger */
+    }
+
+    /* About Section Adjustments */
+    .about {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .about-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about-content {
+        order: -1; /* Place content first */
+    }
+    
+    .about-content h2 {
+        text-align: center;
+    }
+    
+    .about-content h3 {
+        text-align: center;
+    }
+
+    /* Skills Adjustments */
+    .skills-container {
+        justify-content: center;
+    }
+
+    /* Portfolio Adjustments */
+    .portfolio-container {
+        grid-template-columns: 1fr; /* Single column on phones */
+    }
+    
+    /* Contact Adjustments */
+    .contact form .input-box {
+        flex-direction: column; /* Stack form inputs vertically */
+    }
+    .contact form .input-box input {
+        width: 100%;
+    }
+}
+
+/* EXTRA SMALL DEVICES (Small Phones - 450px) */
+@media (max-width: 450px) {
+    /* Reduce padding/margins for very small screens */
+    .home-content h1 {
+        font-size: 4rem;
+    }
+    .home-content h3 {
+        font-size: 2rem;
+    }
 }
